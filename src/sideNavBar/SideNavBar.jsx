@@ -14,11 +14,16 @@ function SideNavBar({ inputValue, setInputValue, data, setData }) {
   };
 
   const handleInputSubmit = () => {
-    console.log(inputValue);
-
     setInputSubmit(inputValue);
   };
-  console.log(isinputSubmited);
+
+  const handleOnKeyDown = (event)=>{
+    if(event.key ==="Enter"){
+console.log(event.key);
+
+    setInputSubmit(inputValue);  
+    }
+  }
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -51,12 +56,11 @@ function SideNavBar({ inputValue, setInputValue, data, setData }) {
 
     fetchData();
   }, [location]);
-  console.log(data);
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64 opacity-25 m-12">
-        <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin "></div>
+      <div className="flex items-center justify-center h-64 opacity-25 m-12 ">
+        <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -69,27 +73,29 @@ function SideNavBar({ inputValue, setInputValue, data, setData }) {
   }
 
   return (
-    <div className="row-start-1 row-end-21 col-start-1 col-end-21 rounded-r-lg border-r-3 border-r-white grid grid-rows-20 grid-col-20 z-1 ">
+    <div className="row-start-1 row-end-21 col-start-1 col-end-21 rounded-r-lg border-r-3 border-r-white grid grid-rows-20 grid-col-20 ">
       <nav
         id="side-nav-bar"
-        className=" row-start-1 row-end-6 col-start-1 col-end-17 hover:border-b-2 hover:border-white  "
+        className=" row-start-1 row-end-6 col-start-1 col-end-17 border-4 border-red-500 grid grid-rows-10 grid-cols-20  "
       >
         <div
           id="input-container"
-          className=" grid grid-rows-1 grid-cols-6 w-[90%] mt-2 ml-6 rounded-lg  "
+          className=" grid grid-rows-3 grid-cols-6 w-[90%] mt-2 ml-6 rounded-lg border-3 border-gray-600 row-start-1 row-end-3 col-start-2 col-end-19  "
         >
           <input
             type="text"
             onChange={handleInputValue}
-            className=" hover:border-b-2 hover:border-gray-300  row-start-3 row-end-5 col-start-3 col-end-6 placeholder-white focus:border-none focus:outline-none focus:shadow-none placeholder:text-lg text-white text-sm "
-            placeholder="New Delhi"
+            className=" border-2 row-start-1 row-end-5 col-start-1 col-end-6 placeholder-white focus:border-none focus:outline-none focus:shadow-none placeholder:text-lg text-white text-sm"
+            placeholder="Enter your location here "
+            onKeyDown={handleOnKeyDown}
           ></input>
           <span
             id="search-icon-container"
-            className="rounded-r-lg text-white row-start-3 col-start-6 col-end-7 active:translate-y-[2px] active:text-black gap-y-2"
+            className="rounded-r-lg text-white row-start-1 row-end-4 col-start-6 col-end-7 active:translate-y-[2px] active:text-black border-4 border-gray-600"
             onClick={handleInputSubmit}
+            
           >
-            <FiSearch className="text-xl relative top-1" />
+            <FiSearch className="text-xl ml-2" />
           </span>
         </div>
       </nav>
@@ -102,7 +108,7 @@ function SideNavBar({ inputValue, setInputValue, data, setData }) {
           {isinputSubmited}
         </h1>
         <h1 className="row-start-3 row-end-7 col-start-9 col-end-16 text-white text-6xl md:text-6xl lg:text-8xl xl:text-4xl">
-          {Math.round(((data.currentConditions.temp - 32) * 5) / 9)}*
+          {Math.round(((data.currentConditions.temp - 32) * 5) / 9)}&#8451;
         </h1>
         <h2 className="row-start-6 col-start-6 col-end-18 text-2xl text-white md:text-2xl lg:text-4xl xl:text-4xl">
           Wind Speed : {data.currentConditions.windspeed}mph
