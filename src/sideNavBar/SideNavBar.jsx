@@ -72,7 +72,7 @@ useEffect(() => {
 
   return (
     <div className="border-2 row-start-1 row-end-21 col-start-1 col-end-19 opacity-50 rounded-r-lg border-r-3 border-r-white grid grid-rows-20 grid-col-20 ">
-      <nav id="side-nav-bar" className=" row-start-1 col-start-1 col-end-15 ">
+      <nav id="side-nav-bar" className=" row-start-1 row-end-3 col-start-1 col-end-17 ">
         <div
           id="input-container"
           className=" grid grid-rows-1 grid-cols-6 w-[90%] mt-2 ml-6 rounded-r-lg hover:border-b-2 hover:border-white "
@@ -96,8 +96,12 @@ useEffect(() => {
        
        <div id="info-parent-container" className="row-start-2 row-end-19 col-start-1 col-end-17 border-4 grid grid-rows-20 grid-cols-20">
 
-        <h1 className="row-start-1 row-end-3 col-start-1 col-end-6 border-2 text-white text-4xl md:text-4xl lg:text-6xl">{Math.round((data.currentConditions.temp-32)*5/9)}*C</h1>
-        <p className="row-start-4 col-start-2 col-end-6 border-2 text-white md:text-2xl lg:text-4xl">{data.currentConditions.windspeed}mph</p>
+        <h1 className="row-start-1 row-end-3 col-start-1 col-end-6 text-white text-4xl md:text-4xl lg:text-6xl">{Math.round((data.currentConditions.temp-32)*5/9)}*C</h1>
+        <p className="row-start-4 col-start-2 col-end-16  text-white md:text-2xl lg:text-4xl">Wind Speed : {data.currentConditions.windspeed}mph</p>
+       <p className="row-start-5 col-start-2 col-end-6  text-white text-3xl md:text-2xl lg:text-4xl">{data.currentConditions.conditions}</p>
+       <p className="row-start-5 col-start-2 col-end-6  text-white text-3xl md:text-2xl lg:text-4xl">{data.currentConditions.conditions}</p>
+       <p className="row-start-7 col-start-2 col-end-17  text-white text-3xl md:text-2xl lg:text-4xl">UV Index :{data.currentConditions.uvindex}</p>
+       
        
        </div>
        

@@ -8,7 +8,7 @@ function App() {
 const [inputValue,setInputValue] = useState("");
 const [data, setData] = useState([]);
   return (
-    <div className='grid grid-rows-20 grid-cols-20 h-[100vh] w-[100vw] border-6 bg-gray-400' id='app-container'>ut
+    <div className='grid grid-rows-20 grid-cols-20 h-[100vh] w-[100vw]  bg-black' id='app-container'>ut
       {/* <Outlet context={{inputValue,setInputValue}}/> */}
     <SideNavBar inputValue = {inputValue} setInputValue={setInputValue} data={data} setData={setData}/>
     <ContentPage data={data} setData={setData}/>
