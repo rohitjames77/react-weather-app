@@ -95,8 +95,8 @@ useEffect(() => {
       </nav>
        
        <div id="info-parent-container" className="row-start-2 row-end-19 col-start-1 col-end-17 border-4 grid grid-rows-20 grid-cols-20">
-
-        <h1 className="row-start-1 row-end-3 col-start-1 col-end-6 text-white text-4xl md:text-4xl lg:text-6xl">{Math.round((data.currentConditions.temp-32)*5/9)}*C</h1>
+<h1 className="row-start-1 row-end-3 col-start-1 col-end-6 text-white text-4xl md:text-4xl lg:text-6xl">{isinputSubmited}</h1>
+        <h1 className="row-start-2 row-end-3 col-start-1 col-end-6 text-white text-4xl md:text-4xl lg:text-6xl">{Math.round((data.currentConditions.temp-32)*5/9)}*C</h1>
         <p className="row-start-4 col-start-2 col-end-16  text-white md:text-2xl lg:text-4xl">Wind Speed : {data.currentConditions.windspeed}mph</p>
        <p className="row-start-5 col-start-2 col-end-6  text-white text-3xl md:text-2xl lg:text-4xl">{data.currentConditions.conditions}</p>
        <p className="row-start-5 col-start-2 col-end-6  text-white text-3xl md:text-2xl lg:text-4xl">{data.currentConditions.conditions}</p>
