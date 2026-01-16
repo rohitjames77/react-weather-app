@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router'
 import SideNavBar from './sideNavBar/SideNavBar.jsx'
-import ContentPage from './Content/ContentPage.jsx'
+import ContentPage from './content/ContentPage.jsx'
 
 
 
