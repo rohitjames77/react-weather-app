@@ -1,9 +1,7 @@
 import { Outlet } from "react-router";
-import SideNavBar from "./sideNavBar/SideNavBar";
+import SideNavBar from "./content-page/ContentPage";
 import { useState, useEffect } from "react";
-import ContentPage from "./content/ContentPage";
 import axios from "axios";
-import ErrorPage from "./sideNavBar/ErrorPage";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -42,7 +40,7 @@ function App() {
               location,
               key: "NTV85PXGEFFBCHC42DLFKNLY6",
             },
-          }
+          },
         );
 
         setData(response.data);
@@ -69,18 +67,21 @@ function App() {
 
   return (
     <div
-      className="grid grid-rows-20 grid-cols-20 h-[100vh] w-[100vw] bg-[url(./assets/sunny_day.png)] bg-no-repeat bg-cover bg-center opacity-75"
+      className="grid grid-rows-20 grid-cols-20 h-[100vh] w-[100vw] bg-[url(./assets/clear_sunny.jpg)] bg-no-repeat bg-cover bg-center opacity-75"
       id="app-container"
     >
-      {/* <Outlet context={{inputValue,setInputValue}}/> */}
-      <SideNavBar
-        data={data}
-        isinputSubmited={isinputSubmited}
-        handleOnKeyDown={handleOnKeyDown}
-        handleInputValue={handleInputValue}
-        handleInputSubmit={handleInputSubmit}
+      <Outlet
+        context={{
+          inputValue,
+          setInputValue,
+          data,
+          isinputSubmited,
+          handleOnKeyDown,
+          handleInputValue,
+          handleInputSubmit,
+          setData,
+        }}
       />
-      <ContentPage data={data} setData={setData} />
     </div>
   );
 }
